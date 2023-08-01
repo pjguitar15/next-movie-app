@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <main className='container mx-auto pt-5'>
       <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-4'>
-        {res.results.map((item: any) => (
+        {res.results?.map((item: any) => (
           <MovieItem key={item.id} item={item} />
         ))}
       </div>
