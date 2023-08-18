@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchForm from './SearchForm'
 
 const Navbar = () => {
   return (
@@ -9,11 +10,10 @@ const Navbar = () => {
             <div className='px-4 py-2 rounded-full bg-yellow-600 font-bold text-white mr-4'>
               M
             </div>
-            <div>IDMB Movies App</div>
+            <div>IMDB Movies App</div>
           </div>
           <div>
-            
-            <form action=''></form>
+            <SearchForm />
           </div>
         </div>
       </div>
