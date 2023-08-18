@@ -7,7 +7,7 @@ const MovieItem = ({ item }: any) => {
   // original_title(string), overview(string), popularity(number), poster_path(string), release_date(string)
   // title(string), video(bool), vote_average(number), vote_count(number)
   return (
-    <div className='mb-10 px-5 md:px-0'>
+    <div className='mb-10 px-5 md:px-0 text-white'>
       <div className='overflow-hidden relative group'>
         <div className='hidden opacity-0 group-hover:opacity-100 group-hover:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-opacity duration-300 pointer-events-none'>
           Click to Watch
