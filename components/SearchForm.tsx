@@ -10,7 +10,7 @@ const SearchForm = () => {
   const handleFormSubmit = (e: any) => {
     e.preventDefault()
     setSearchInput('')
-    router.push(`/search${searchInput}`)
+    router.push(`/search?name=${searchInput}`)
   }
 
   useEffect(() => {

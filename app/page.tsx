@@ -5,7 +5,7 @@ export default async function Home() {
   )
   const res = await data.json()
   console.log(`API Key: ${process.env.API_KEY}`)
-  console.log(res)
+  // console.log(res)
 
   return (
     <main className='container mx-auto pt-5'>
