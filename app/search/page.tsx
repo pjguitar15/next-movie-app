@@ -21,7 +21,6 @@ const page = async ({ searchParams }: { searchParams: { name: string } }) => {
           Search Result for: {searchParams.name}
         </h1>
       )}
-      {/* <hr className='mb-5' /> */}
       <div className='grid lg:grid-cols-3 xl:grid-cols-4 gap-3'>
         {res.results.length > 0 ? (
           res.results.map((item: any) => (

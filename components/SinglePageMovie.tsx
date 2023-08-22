@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-const MovieItem = ({ item }: any) => {
+const SinglePageMovie = ({ item }: any) => {
   const router = useRouter()
   // movie image root url
   const movieDbImageUrl = `https://image.tmdb.org/t/p/original`
@@ -14,7 +14,7 @@ const MovieItem = ({ item }: any) => {
   return (
     <div
       onClick={() => handleClick(item.id)}
-      className='mb-10 px-5 md:px-0 text-white'
+      className='mb-10 px-5 md:px-0 text-white grid grid-cols-2 pt-10'
     >
       <div className='overflow-hidden relative group'>
         <div className='hidden opacity-0 group-hover:opacity-100 group-hover:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-opacity duration-300 pointer-events-none'>
@@ -32,7 +32,7 @@ const MovieItem = ({ item }: any) => {
         </div>
       </div>
       {/* content here */}
-      <div className='py-5 relative'>
+      <div className='py-5 pl-10 relative'>
         <h4 className='font-bold text-xl mb-3'>{item.original_title}</h4>
         <h6 className='uppercase bg-zinc-900 inline-block px-2 border border-white rounded mb-2'>
           {item.original_language}
@@ -53,4 +53,4 @@ const MovieItem = ({ item }: any) => {
   )
 }
 
-export default MovieItem
+export default SinglePageMovie
