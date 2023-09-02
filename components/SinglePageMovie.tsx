@@ -8,7 +8,7 @@ const SinglePageMovie = ({ item }: any) => {
   const movieDbImageUrl = `https://image.tmdb.org/t/p/original`
 
   const handleClick = (id: number) => {
-    router.push(`/search/${id}`)
+    router.push(`/view/${id}`)
   }
 
   return (
@@ -17,19 +17,14 @@ const SinglePageMovie = ({ item }: any) => {
       className='mb-10 px-5 md:px-0 text-white grid grid-cols-2 pt-10'
     >
       <div className='overflow-hidden relative group'>
-        <div className='hidden opacity-0 group-hover:opacity-100 group-hover:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 transition-opacity duration-300 pointer-events-none'>
-          Click to View
-        </div>
-        <div className='hover:scale-125 transition duration-500 cursor-pointer hover:sepia hover:brightness-50'>
-          <Image
-            className='w-full'
-            src={movieDbImageUrl + item.backdrop_path}
-            width={500}
-            height={300}
-            objectFit='cover'
-            alt='movie poster'
-          />
-        </div>
+        <Image
+          className='w-full'
+          src={movieDbImageUrl + item.backdrop_path}
+          width={500}
+          height={300}
+          objectFit='cover'
+          alt='movie poster'
+        />
       </div>
       {/* content here */}
       <div className='py-5 pl-10 relative'>

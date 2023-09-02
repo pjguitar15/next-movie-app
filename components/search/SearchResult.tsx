@@ -1,8 +1,10 @@
 'use client'
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
 const SearchResult = ({
+  id,
   title,
   image,
   overview,
@@ -10,7 +12,9 @@ const SearchResult = ({
   originalLanguage,
   popularity,
   voteCount,
+  searchParamsValue,
 }: {
+  id: number
   title: string
   image: string
   overview: string
@@ -18,8 +22,14 @@ const SearchResult = ({
   originalLanguage: string
   popularity: string
   voteCount: string
+  searchParamsValue: string
 }) => {
   const [isOverviewExpanded, setIsOverviewExpanded] = useState(false)
+  const router = useRouter()
+
+  const handleClick = (id: number) => {
+    router.push(`/search/${id}?searchQuery=${searchParamsValue}&idValue=${id}`)
+  }
 
   const handleExpand = () => {
     setIsOverviewExpanded(!isOverviewExpanded)
@@ -33,11 +43,11 @@ const SearchResult = ({
           </div>
           <div className='hover:scale-125 transition duration-500 cursor-pointer hover:sepia hover:brightness-50'>
             <Image
+              onClick={() => handleClick(id)}
               className='w-full'
               src={image}
               width={500}
               height={300}
-              objectFit='cover'
               alt='movie poster'
             />
           </div>
@@ -51,15 +61,17 @@ const SearchResult = ({
           <h6 className='mb-1'>
             <span className='font-bold'>Released Date:</span> {releaseDate}
           </h6>
+
           <h6>
             {!isOverviewExpanded ? overview.slice(0, 120) + '..' : overview}
+            <span
+              onClick={handleExpand}
+              className='text-yellow-400 hover:text-yellow-300 cursor-pointer ms-2'
+            >
+              {!isOverviewExpanded ? 'Show more' : 'Show less'}
+            </span>
           </h6>
-          <span
-            onClick={handleExpand}
-            className='text-yellow-400 hover:text-yellow-300 cursor-pointer'
-          >
-            {!isOverviewExpanded ? 'Show more' : 'Show less'}
-          </span>
+
           <h6 className='mb-2 mt-4'>
             <span className='font-bold'>Popularity:</span> {popularity}
           </h6>
