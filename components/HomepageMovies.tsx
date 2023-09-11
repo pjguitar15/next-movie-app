@@ -4,7 +4,7 @@ import MovieItem from './MovieItem'
 import Hero from './Hero'
 
 const HomepageMovies = ({ data }: { data: Object[] }) => {
-  const [numberOfDisplayedMovies, setNumberOfDisplayedMovies] = useState(4)
+  const [numberOfDisplayedMovies, setNumberOfDisplayedMovies] = useState(8)
   const handleLoadMovies = () => {
     setNumberOfDisplayedMovies(numberOfDisplayedMovies + 4)
   }

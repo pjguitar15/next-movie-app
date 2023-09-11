@@ -10,8 +10,8 @@ const Hero = ({ popularMovie }: { popularMovie: any }) => {
     router.push(`/view/${id}`)
   }
   return (
-    <div className='flex'>
-      <div className='ps-14 pe-4 flex flex-col justify-center w-5/12'>
+    <div className='flex flex-col-reverse lg:flex lg:flex-row'>
+      <div className='ps-14 pe-4 flex flex-col justify-center lg:w-5/12 text-center lg:text-left mt-8 lg:mt-0'>
         <h1 className='text-white text-4xl font-bold uppercase'>
           {popularMovie.original_title}
         </h1>
@@ -25,7 +25,7 @@ const Hero = ({ popularMovie }: { popularMovie: any }) => {
           </button>
         </div>
       </div>
-      <div className='relative w-7/12'>
+      <div className='relative lg:w-7/12'>
         <div
           className='absolute left-0 top-0 bottom-0 w-1/2 z-10'
           style={{
